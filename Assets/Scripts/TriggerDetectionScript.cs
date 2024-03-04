@@ -9,6 +9,8 @@ public class TriggerDetectionScript : MonoBehaviour
     public GameObject PinballCamera;
     public bool playingPinball;
 
+    public CameraRaycastScript buttonCheck;
+
 
     private void Start()
     {
@@ -29,11 +31,14 @@ public class TriggerDetectionScript : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
+        if (buttonCheck.buttonOn == true)
         {
-            PlayerCamera.SetActive(false);
-            PinballCamera.SetActive(true);
-            playingPinball = true;
+            if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
+            {
+                PlayerCamera.SetActive(false);
+                PinballCamera.SetActive(true);
+                playingPinball = true;
+            }
         }
     }
 }
