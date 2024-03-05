@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BreakerBoxPuzzle : MonoBehaviour
 {
@@ -9,45 +10,56 @@ public class BreakerBoxPuzzle : MonoBehaviour
     public GameObject pinkWire;
     public GameObject whiteWire;
 
-    public Camera cam;
-    public LayerMask fuckYou;
+    public bool blueOn;
+    public bool pinkOn;
+    public bool whiteOn;
+    public bool wiresConnected;
+
+    public string currentTag;
+
+    public string current;
+    public string last;
 
     private void Start()
     {
-        cam = Camera.main;
+        current = null;
+        last = null;
 
         blueWire.SetActive(false);
         whiteWire.SetActive(false);
         pinkWire.SetActive(false);
+
+        blueOn = false;
+        pinkOn = false;
+        whiteOn = false;
+
+        wiresConnected = false;
     }
 
     public void Update()
     {
-        Vector3 mousePos = Input.mousePosition;
-        mousePos = cam.WorldToScreenPoint(mousePos);
-        Debug.DrawRay(transform.position, mousePos - transform.position, Color.blue);
+        last = current;
+        current = currentTag;
 
-        if (Input.GetMouseButtonDown(0))
+        if (last == "Blue1" && current == "Blue2" || last == "Blue2" && current == "Blue1")
         {
-            Vector3 ray = cam.WorldToScreenPoint(Input.mousePosition);
+            blueWire.SetActive(true);
+            blueOn = true;
+        }
+        else if (last == "Pink1" && current == "Pink2" || last == "Pink2" && current == "Pink1")
+        {
+            pinkWire.SetActive(true);
+            pinkOn = true;
+        }
+        else if (last == "White1" && current == "White2" || last == "White2" && current == "White")
+        {
+            whiteWire.SetActive(true);
+            whiteOn = true;
+        }
 
-            if (Physics.Raycast(ray, Vector3.forward, 100, fuckYou))
-            {
-                Debug.Log("runs2");
-                Debug.Log("raycast hit");
-            }
-            
-            
-            /*Debug.Log("mouse click");
-            RaycastHit hitInfo = new RaycastHit();
-            if (Physics.Raycast(cam.ScreenPointToRay(Input.mousePosition), out hitInfo))
-            {
-                Debug.Log("did the thing");
-                if (hitInfo.transform.tag == "Blue1")
-                {
-                    print("blue1");
-                }
-            }*/
+        if (blueOn == true && pinkOn == true && whiteOn == true)
+        {
+            wiresConnected = true;
         }
     }
 }

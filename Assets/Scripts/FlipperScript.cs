@@ -12,6 +12,8 @@ public class FlipperScript : MonoBehaviour
 
     public string inputName;
 
+    public CameraRaycastScript buttonCheck;
+
 
     private void Start()
     {
@@ -21,19 +23,22 @@ public class FlipperScript : MonoBehaviour
 
     private void Update()
     {
-        JointSpring spring = new JointSpring();
-        spring.spring = hitstrength;
-        spring.damper = flipperDamper;
+        if (buttonCheck.buttonOn == true)
+        {
+            JointSpring spring = new JointSpring();
+            spring.spring = hitstrength;
+            spring.damper = flipperDamper;
 
-        if(Input.GetAxis(inputName) == 1)
-        {
-            spring.targetPosition = pressedPosition;
+            if (Input.GetAxis(inputName) == 1)
+            {
+                spring.targetPosition = pressedPosition;
+            }
+            else
+            {
+                spring.targetPosition = restPosition;
+            }
+            hinge.spring = spring;
+            hinge.useLimits = true;
         }
-        else
-        {
-            spring.targetPosition = restPosition;
-        }
-        hinge.spring = spring;
-        hinge.useLimits = true;
     }
 }

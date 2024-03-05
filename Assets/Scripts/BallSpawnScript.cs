@@ -7,18 +7,28 @@ public class BallSpawnScript : MonoBehaviour
     public GameObject ballPrefab;
     public static int loadIndex = 0;
 
+    public CameraRaycastScript buttonCheck;
+
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (buttonCheck.buttonOn == true)
         {
-            SpawnBall();
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                SpawnBall();
+            }
         }
     }
 
     void SpawnBall()
     {
         if (loadIndex <= 0)
+        {
+            loadIndex = 0;
+        }
+
+        if (loadIndex == 0)
         {
             Instantiate(ballPrefab);
             loadIndex++;

@@ -14,9 +14,9 @@ public class BallScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.X))
         {
-            Destroy(this.gameObject);
+            Destroy(GameObject.FindWithTag("ball"));
             BallSpawnScript.loadIndex = BallSpawnScript.loadIndex - 1;
         }
     }

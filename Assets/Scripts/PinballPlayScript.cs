@@ -26,22 +26,4 @@ public class PinballPlayScript : MonoBehaviour
             }
         }
     }
-
-
-
-
-
-
-    /*[SerializeField] private Transform InteractionPoint;
-    [SerializeField] private float InteractionRadius = 0.5f;
-    [SerializeField] private LayerMask InteractionMask;
-
-    private readonly Collider[] Colliders = new Collider[3];
-    [SerializeField] private int NumFound;
-
-
-    private void Update()
-    {
-        NumFound = Physics.OverlapSphereNonAlloc(InteractionPoint.position, InteractionRadius, Colliders, InteractionMask);
-    }*/
 }
