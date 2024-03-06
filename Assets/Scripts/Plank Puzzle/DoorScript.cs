@@ -22,9 +22,9 @@ public class DoorScript : MonoBehaviour
     {
         if (breakerBox.boxOn == true)
         {
-            if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+            if (collision.gameObject.tag == "Player")
             {
-                if (pickUp.isPickedUp == true && pickUp.pickupTarget.name != "paper")
+                if (pickUp.isPickedUp == false && pickUp.pickupTarget.name != "paper")
                 {
                     pickedUp = pickUp.pickupTarget;
 

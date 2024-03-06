@@ -35,7 +35,7 @@ public class DoubleDoorsScript : MonoBehaviour
     {
         if (breakerBox.boxOn == true)
         {
-            if (collision.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+            if (collision.gameObject.tag == "Player")
             {
                 if (pickUp.isPickedUp == true && pickUp.pickupTarget.name != "paper")
                 {
