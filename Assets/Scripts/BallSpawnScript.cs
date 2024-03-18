@@ -7,7 +7,7 @@ public class BallSpawnScript : MonoBehaviour
     public GameObject ballPrefab;
     public static int loadIndex = 0;
 
-    public CameraRaycastScript buttonCheck;
+    public KeycodePuzzleRaycastScript buttonCheck;
 
 
     public void Update()

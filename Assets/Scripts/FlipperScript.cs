@@ -12,7 +12,7 @@ public class FlipperScript : MonoBehaviour
 
     public string inputName;
 
-    public CameraRaycastScript buttonCheck;
+    public KeycodePuzzleRaycastScript buttonCheck;
 
 
     private void Start()

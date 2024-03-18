@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class PlaytimeTimer : MonoBehaviour
 {
     [SerializeField] Text timerText;
 
@@ -24,6 +25,7 @@ public class Timer : MonoBehaviour
         else if (timeLeft <= 0)
         {
             timeLeft = 0;
+            SceneManager.LoadScene("GameLost");
         }
 
         string timerStr = timeLeft.ToString();

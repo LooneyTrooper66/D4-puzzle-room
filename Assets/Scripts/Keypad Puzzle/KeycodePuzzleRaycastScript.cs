@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraRaycastScript : MonoBehaviour
+public class KeycodePuzzleRaycastScript : MonoBehaviour
 {
     public Camera playerCam;
     public KeyCodeScript keyCodeScr;

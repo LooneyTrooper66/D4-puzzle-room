@@ -9,7 +9,7 @@ public class TriggerDetectionScript : MonoBehaviour
     public GameObject PinballCamera;
     public bool playingPinball;
 
-    public CameraRaycastScript buttonCheck;
+    public KeycodePuzzleRaycastScript buttonCheck;
 
 
     private void Start()

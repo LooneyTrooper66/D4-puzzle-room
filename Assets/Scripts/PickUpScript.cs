@@ -7,6 +7,7 @@ public class PickUpScript : MonoBehaviour
     public GameObject pickupPoint;
     public GameObject pickupTarget;
     public bool isPickedUp;
+    public bool paperUp;
 
 
     private void Start()
@@ -36,6 +37,11 @@ public class PickUpScript : MonoBehaviour
                 pickupTarget.transform.parent = pickupPoint.transform;
                 pickupTarget.transform.localPosition = new Vector3(0, 0, 0);
                 isPickedUp = true;
+
+                if (collision.gameObject.name == "paper")
+                {
+                    paperUp = true;
+                }
             }
         }
     }
