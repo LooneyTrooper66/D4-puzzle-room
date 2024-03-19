@@ -832,17 +832,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 8583165accc544f4f8041899a312ea38, type: 2}
+      objectReference: {fileID: 2100000, guid: 87ad7a3868080674da5b7ccca5bf968b, type: 2}
     - target: {fileID: -2750096947667006935, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 95fa63734b465bb4b90fab156feb267c, type: 2}
+      objectReference: {fileID: 2100000, guid: 6b98902fcc2434d4e8cbb1f2ac694683, type: 2}
     - target: {fileID: -1206874426333947015, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 6f6f407cfd7b2e24e9853200006f72b6, type: 2}
+      objectReference: {fileID: 2100000, guid: e0f62c0ed4b1d6345ba8e246ab4cb0c0, type: 2}
     - target: {fileID: 919132149155446097, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Name
@@ -852,17 +852,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 0099655786423d14087e3db6c6d81170, type: 2}
+      objectReference: {fileID: 2100000, guid: c0daab6efa7d72243aaebe744d5f7bc4, type: 2}
     - target: {fileID: 3190994677623865783, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4270eae0dbc345049aa96359befc2415, type: 2}
+      objectReference: {fileID: 2100000, guid: a83a3ebaab1c8284a94310c0aed259ce, type: 2}
     - target: {fileID: 4320098735860348617, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 21f5f7fbb97f3d14bb21bd5bd5c0212b, type: 2}
+      objectReference: {fileID: 2100000, guid: 5858e8bcc78244042b01800201f051a2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8e3e79e90b4d3499c570aa71d98736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensitivity: 500
+  MouseSensitivity: 200
   playerBody: {fileID: 1043390871}
 --- !u!114 &330585549
 MonoBehaviour:
@@ -4350,7 +4350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1043390873}
-  speed: 12
+  speed: 10
   gravity: -19.28
   jumpHeight: 1
   groundCheck: {fileID: 1280157573}

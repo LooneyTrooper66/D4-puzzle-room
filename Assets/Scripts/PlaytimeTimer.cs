@@ -21,14 +21,22 @@ public class PlaytimeTimer : MonoBehaviour
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
+            updateTimer(timeLeft);
         }
         else if (timeLeft <= 0)
         {
             timeLeft = 0;
             SceneManager.LoadScene("GameLost");
         }
+    }
 
-        string timerStr = timeLeft.ToString();
-        timerText.text = timerStr;
+    void updateTimer(float currentTime)
+    {
+        currentTime++;
+
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 }

@@ -87,7 +87,7 @@ public class JoshDialogueScript : MonoBehaviour
         {
             textTimer -= Time.deltaTime;
         }
-        else if (textTimer <= 0 || completeBr == true)
+        else if (textTimer <= 0)
         {
             if (i <= 2)
             {
@@ -95,9 +95,9 @@ public class JoshDialogueScript : MonoBehaviour
                 i++;
                 textTimer = 8;
             }
-            else if (i >= 3)
+            else if (i >= 3 || completeBr == true)
             {
-                joshText.text = dialogue[2];
+                joshText.text = " ";
                 first = false;
             }
         }
@@ -129,8 +129,15 @@ public class JoshDialogueScript : MonoBehaviour
         {
             textTimer -= Time.deltaTime;
         }
+        else if (textTimer <= 0 || completePa == false)
+        {
+            Debug.Log("called");
+            textTimer = 0;
+            Hint();
+        }
         else if (textTimer <= 0 || completePa == true)
         {
+            Debug.Log("not called");
             textTimer = 0;
             joshText.text = " ";
         }
@@ -139,29 +146,23 @@ public class JoshDialogueScript : MonoBehaviour
 
     void Hint()
     {
-        textTimer = 8;
+        textTimer = 6;
+        joshText.text = " ";
+
         if (textTimer > 0)
         {
             textTimer -= Time.deltaTime;
         }
-        else if (textTimer <= 0 || completeDr == true || completePa == true)
+        else if (textTimer <= 0 && completePa == false)
         {
-            if (paperScr.paperUp == false)
-            {
-                textTimer = 0;
-                joshText.text = "Maybe check behind the counter, i bet the owner would keep it there.";
-            }
-            else
-            {
-                textTimer = 0;
-            }
+            textTimer = 0;
+            joshText.text = "Maybe check behind the counter, i bet the owner would keep it there.";
         }
-        completeDr = true;
     }
 
     void Paper()
     {
-        textTimer = 10;
+        textTimer = 6;
         joshText.text = "Wow, so secure. Just go key it in, the numpad is next to the door. \nI've heard those keys can be a bit sticky, so just keep trying.";
 
         if (textTimer > 0)
@@ -188,7 +189,7 @@ public class JoshDialogueScript : MonoBehaviour
         else if (textTimer <= 0 || completeBu == true)
         {
             textTimer = 0;
-            joshText.text = " ";
+            joshText.text = "  ";
         }
         completeKc = true;
     }
@@ -206,7 +207,7 @@ public class JoshDialogueScript : MonoBehaviour
         {
             textTimer = 0;
             joshText.text = " ";
-        }
+        } 
         completeBu = true;
     }
 }
