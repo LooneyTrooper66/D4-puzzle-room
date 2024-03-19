@@ -9,6 +9,7 @@ public class JoshDialogueScript : MonoBehaviour
     private bool completeBr;
     public DoubleDoorsScript doorsScr;
     private bool completeDr;
+    private bool hintPlayed;
     public PickUpScript paperScr;
     private bool completePa;
     public KeyCodeScript keycodeScr;
@@ -17,7 +18,7 @@ public class JoshDialogueScript : MonoBehaviour
     private bool completeBu;
 
     public Text joshText;
-    private float textTimer = 8;
+    private float textTimer = 7;
     public string[] dialogue;
     private int i = 0;
     private bool first;
@@ -28,6 +29,7 @@ public class JoshDialogueScript : MonoBehaviour
         first = true;
         completeBr = false;
         completeDr = false;
+        hintPlayed = false;
         completePa = false;
         completeKc = false;
         completeBu = false;
@@ -53,6 +55,11 @@ public class JoshDialogueScript : MonoBehaviour
             if (completeDr == false)
             {
                 Planks();
+            }
+
+            if (completeDr == true && hintPlayed == false)
+            {
+                Hint();
             }
         }
 
@@ -93,7 +100,7 @@ public class JoshDialogueScript : MonoBehaviour
             {
                 joshText.text = dialogue[i];
                 i++;
-                textTimer = 8;
+                textTimer = 6;
             }
             else if (i >= 3 || completeBr == true)
             {
@@ -103,7 +110,7 @@ public class JoshDialogueScript : MonoBehaviour
         }
     }
 
-    void Wires()
+    public void Wires()
     {
         textTimer = 5;
         joshText.text = "Alright nice! \nWait.. I can hear the undead outside, they’re getting close. \nUse those broken bits of wood to block the doors, quick!";
@@ -112,7 +119,7 @@ public class JoshDialogueScript : MonoBehaviour
         {
             textTimer -= Time.deltaTime;
         }
-        else if (textTimer <= 0 || completeDr == true)
+        else if (textTimer <= 0)
         {
             textTimer = 0;
             joshText.text = " ";
@@ -120,47 +127,40 @@ public class JoshDialogueScript : MonoBehaviour
         completeBr = true;
     }
 
-    void Planks()
+    public void Planks()
     {
-        textTimer = 8;
+        textTimer = 7;
         joshText.text = "Nice! It'll be difficult for them to get in now, but those noises are still too close for comfort.\nThat door only locks if you put in a combination code. Quick, look around. We need to find that code.";
 
-        if (textTimer > 0)
+        if (textTimer >= 0)
         {
             textTimer -= Time.deltaTime;
         }
-        else if (textTimer <= 0 || completePa == false)
-        {
-            Debug.Log("called");
-            textTimer = 0;
-            Hint();
-        }
         else if (textTimer <= 0 || completePa == true)
         {
-            Debug.Log("not called");
             textTimer = 0;
             joshText.text = " ";
         }
-        completeDr = true;
     }
 
-    void Hint()
+    public void Hint()
     {
-        textTimer = 6;
+        textTimer = 5;
         joshText.text = " ";
 
         if (textTimer > 0)
         {
             textTimer -= Time.deltaTime;
         }
-        else if (textTimer <= 0 && completePa == false)
+        else if (textTimer <= 0 /*&& completePa == false*/)
         {
             textTimer = 0;
             joshText.text = "Maybe check behind the counter, i bet the owner would keep it there.";
         }
+        hintPlayed = true;
     }
 
-    void Paper()
+    public void Paper()
     {
         textTimer = 6;
         joshText.text = "Wow, so secure. Just go key it in, the numpad is next to the door. \nI've heard those keys can be a bit sticky, so just keep trying.";
@@ -177,7 +177,7 @@ public class JoshDialogueScript : MonoBehaviour
         completePa = true;
     }
 
-    void Code()
+    public void Code()
     {
         textTimer = 10;
         joshText.text = "Jesus, that felt close.\nOk, when the virus first came about, the military converted anything they could into civilian controlled defence systems. There was a pinball machine in this bar, I'm sure they made that into one too. Look around, there should be a switch to activate it somewhere.";
@@ -194,7 +194,7 @@ public class JoshDialogueScript : MonoBehaviour
         completeKc = true;
     }
 
-    void Button()
+    public void Button()
     {
         textTimer = 10;
         joshText.text = "There it is! Now quick, play it and beat it, it’ll launch weapons to kill the undead within guildford. With this, we may be able to protect everyone else until reinforcements arrive! Just keep an eye on the time, coz we’re running out of it.";

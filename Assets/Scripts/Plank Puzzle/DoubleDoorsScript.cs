@@ -28,6 +28,9 @@ public class DoubleDoorsScript : MonoBehaviour
         if (doorsBool.p1Full == true && doorsBool.p2Full == true && p3Full == true && p4Full == true && p5Full == true)
         {
             woodPlaced = true;
+            /*JoshDialogueScript joshDS = beanCanvas.GetComponent<JoshDialogueScript>();
+
+            joshDS.Planks();*/
         }
     }
 

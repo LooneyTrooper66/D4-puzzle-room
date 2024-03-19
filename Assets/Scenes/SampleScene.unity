@@ -1299,7 +1299,7 @@ GameObject:
   - component: {fileID: 269347376}
   - component: {fileID: 269347379}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: BeanCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2522,6 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a1eb1239c205d4682cf92a74db97a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beanCanvas: {fileID: 269347374}
   pickUp: {fileID: 1043390875}
   pickedUp: {fileID: 0}
   p3Full: 0
