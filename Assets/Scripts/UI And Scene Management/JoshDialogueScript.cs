@@ -18,6 +18,7 @@ public class JoshDialogueScript : MonoBehaviour
     private bool completeBu;
 
     private bool stopped;
+    private bool stopped1;
 
     public Text joshText;
 
@@ -31,6 +32,7 @@ public class JoshDialogueScript : MonoBehaviour
         completeKc = false;
         completeBu = false;
         stopped = false;
+        stopped1 = false;
 
         StartCoroutine(FirstLine());
     }
@@ -46,18 +48,18 @@ public class JoshDialogueScript : MonoBehaviour
             }
         }
 
-        // plays text after wood puzzle completed, glitches sometimes for some reason \\
+        // plays text after wood puzzle completed \\
         if (doorsScr.woodPlaced == true)
         {
             completeBr = true;
             if (completeDr == false)
             {
-                //StopForHint();
+                StopForPlank();
                 StartCoroutine(PlanksDone());
             }
             else if (completeDr == true && hintPlayed == false)
             {
-                // plays hint if not found paper after 6 seconds, glitches sometimes \\
+                // plays hint if not found paper after 6 seconds \\
                 StartCoroutine(Hint());
                 hintPlayed = true;
             }
@@ -94,6 +96,15 @@ public class JoshDialogueScript : MonoBehaviour
             }
         }
 
+    }
+
+    void StopForPlank()
+    {
+        if (stopped1 == false)
+        {
+            StopAllCoroutines();
+            stopped1 = true;
+        }
     }
 
     void StopForButton()
