@@ -17,6 +17,9 @@ public class JoshDialogueScript : MonoBehaviour
     public KeycodePuzzleRaycastScript buttonScr;
     private bool completeBu;
 
+    private bool stopped;
+    private bool stopped1;
+
     public Text joshText;
 
 
@@ -28,12 +31,15 @@ public class JoshDialogueScript : MonoBehaviour
         completePa = false;
         completeKc = false;
         completeBu = false;
+        stopped = false;
+        stopped1 = false;
 
         StartCoroutine(FirstLine());
     }
 
     private void Update()
     {
+        // plays text after wires completed \\
         if (breakerScr.wiresConnected == true)
         {
             if (completeBr == false)
@@ -42,55 +48,73 @@ public class JoshDialogueScript : MonoBehaviour
             }
         }
 
+        // plays text after wood puzzle completed, glitches sometimes for some reason \\
         if (doorsScr.woodPlaced == true)
         {
+            completeBr = true;
             if (completeDr == false)
             {
+                //StopForHint();
                 StartCoroutine(PlanksDone());
             }
             else if (completeDr == true && hintPlayed == false)
             {
+                // plays hint if not found paper after 6 seconds, glitches sometimes \\
                 StartCoroutine(Hint());
+                hintPlayed = true;
             }
         }
 
+        // plays text after paper picked up \\
         if (paperScr.paperUp == true)
         {
+            hintPlayed = true;
             if (completePa == false)
             {
                 StartCoroutine(PaperUp());
             }
         }
 
+        // plays text after keycode inputted correctly \\
         if (keycodeScr.codeCorrect == true)
         {
+            completePa = true;
             if (completeKc == false)
             {
                 StartCoroutine(KeycodeDone());
             }
         }
 
+        // plays text after button pressed \\
         if (buttonScr.buttonOn == true)
         {
+            completeKc = true;
             if (completeBu == false)
             {
+                StopForButton();
                 StartCoroutine(PinballOn());
             }
         }
 
     }
 
-    IEnumerator ClearText()
+    void StopForButton()
     {
-        joshText.text = string.Empty;
-        yield return null;
+        if (stopped == false)
+        {
+            StopAllCoroutines();
+            stopped = true;
+        }
     }
 
     IEnumerator FirstLine()
     {
-        joshText.text = "Thank fuck, we got away.\nAh , shit this hurts. I'm not going to be able to walk for a while, but I'll instruct you on what to do.";
+        joshText.text = "Thank god, we got away.\nAh , shit this hurts. I'm not going to be able to walk for a while, but I'll instruct you on what to do.";
         yield return new WaitForSeconds(6f);
-        StartCoroutine(SecondLine());
+        if (breakerScr.wiresConnected == false)
+        {
+            StartCoroutine(SecondLine());
+        }
     }
 
     IEnumerator SecondLine()
@@ -107,7 +131,7 @@ public class JoshDialogueScript : MonoBehaviour
     {
         joshText.text = "This place used to be a vr arcade.. Before the virus… it must have backup\n power somewhere. Find the circuit box, you'll probably be able to turn it on.";
         yield return new WaitForSeconds(5f);
-        StartCoroutine(ClearText());
+        joshText.text = string.Empty;
     }
 
     IEnumerator WiresDone()
@@ -115,12 +139,11 @@ public class JoshDialogueScript : MonoBehaviour
         joshText.text = "Alright nice! \nWait.. I can hear the undead outside, they’re getting close. \nUse those broken bits of wood to block the doors, quick!";
         yield return new WaitForSeconds(5f);
         completeBr = true;
-        StartCoroutine(ClearText());
+        joshText.text = string.Empty;
     }
 
     IEnumerator PlanksDone()
     {
-        completeBr = true;
         joshText.text = "Nice! It'll be difficult for them to get in now, but those noises are still too close for comfort.\nThat door only locks if you put in a combination code. Quick, look around. We need to find that code.";
         yield return new WaitForSeconds(6f);
         completeDr = true;
@@ -128,56 +151,51 @@ public class JoshDialogueScript : MonoBehaviour
 
     IEnumerator Hint()
     {
-        completeDr = true;
         joshText.text = string.Empty;
         yield return new WaitForSeconds(5f);
-        if (hintPlayed == false)
-        {
-            joshText.text = "Maybe check behind the counter, i bet the owner would keep it there.";
-            yield return new WaitForSeconds(3f);
-            hintPlayed = true;
-            StartCoroutine(ClearText());
-        }
+        joshText.text = "Maybe check behind the counter, i bet the owner would keep it there.";
+        yield return new WaitForSeconds(3f);
+        hintPlayed = true;
+        joshText.text = string.Empty;
     }
 
     IEnumerator PaperUp()
     {
-        hintPlayed = true;
         joshText.text = "Wow, so secure. Just go key it in, the numpad is next to the door. \nI've heard those keys can be a bit sticky, so just keep trying.";
         yield return new WaitForSeconds(5f);
         completePa = true;
-        StartCoroutine(ClearText());
+        joshText.text = string.Empty;
     }
 
     IEnumerator KeycodeDone()
     {
-        completePa = true;
         joshText.text = "Jesus, that felt close.\nOk, when the virus first came about, the military converted anything they could into civilian controlled defence systems.";
         yield return new WaitForSeconds(4f);
+        completeKc = true;
         StartCoroutine(KeyDone2());
     }
 
     IEnumerator KeyDone2()
     {
+        completePa = true;
         joshText.text = "There was a pinball machine in this bar, I'm sure they made that into one too. Look around, there should be a switch to activate it somewhere.";
         yield return new WaitForSeconds(4f);
-        completeKc = true;
-        StartCoroutine(ClearText());
+        joshText.text = string.Empty;
     }
 
     IEnumerator PinballOn()
     {
-        completeKc = true;
         joshText.text = "There it is! Now quick, play it and beat it, it’ll launch weapons to kill the undead within guildford.";
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
+        completeBu = true;
         StartCoroutine(PinballOn2());
     }
 
     IEnumerator PinballOn2()
     {
+        completeKc = true;
         joshText.text = "With this, we may be able to protect everyone else until reinforcements arrive! Just keep an eye on the time, coz we’re running out of it.";
-        yield return new WaitForSeconds(4f);
-        completeBu = true;
-        StartCoroutine(ClearText());
+        yield return new WaitForSeconds(5f);
+        joshText.text = string.Empty;
     }
 }
