@@ -19,6 +19,7 @@ public class JoshDialogueScript : MonoBehaviour
 
     private bool stopped;
     private bool stopped1;
+    private bool stopped2;
 
     public Text joshText;
 
@@ -33,6 +34,7 @@ public class JoshDialogueScript : MonoBehaviour
         completeBu = false;
         stopped = false;
         stopped1 = false;
+        stopped2 = false;
 
         StartCoroutine(FirstLine());
     }
@@ -81,6 +83,7 @@ public class JoshDialogueScript : MonoBehaviour
             completePa = true;
             if (completeKc == false)
             {
+                StopForCode();
                 StartCoroutine(KeycodeDone());
             }
         }
@@ -104,6 +107,15 @@ public class JoshDialogueScript : MonoBehaviour
         {
             StopAllCoroutines();
             stopped1 = true;
+        }
+    }
+
+    void StopForCode()
+    {
+        if (stopped2 == false)
+        {
+            StopAllCoroutines();
+            stopped2 = true;
         }
     }
 
