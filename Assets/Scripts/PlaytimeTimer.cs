@@ -9,6 +9,8 @@ public class PlaytimeTimer : MonoBehaviour
     [SerializeField] Text timerText;
 
     public float timeLeft;
+    public float minutes;
+    public float seconds;
 
 
     private void Start()
@@ -34,8 +36,8 @@ public class PlaytimeTimer : MonoBehaviour
     {
         currentTime++;
 
-        float minutes = Mathf.FloorToInt(currentTime / 60);
-        float seconds = Mathf.FloorToInt(currentTime % 60);
+        minutes = Mathf.FloorToInt(currentTime / 60);
+        seconds = Mathf.FloorToInt(currentTime % 60);
 
         timerText.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
