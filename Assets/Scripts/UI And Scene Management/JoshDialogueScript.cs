@@ -18,7 +18,6 @@ public class JoshDialogueScript : MonoBehaviour
     private bool completeBu;
 
     private bool stopped;
-    private bool stopped1;
 
     public Text joshText;
 
@@ -32,7 +31,6 @@ public class JoshDialogueScript : MonoBehaviour
         completeKc = false;
         completeBu = false;
         stopped = false;
-        stopped1 = false;
 
         StartCoroutine(FirstLine());
     }
