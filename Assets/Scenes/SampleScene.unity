@@ -1409,12 +1409,6 @@ MonoBehaviour:
   keycodeScr: {fileID: 757807205}
   buttonScr: {fileID: 330585551}
   joshText: {fileID: 8407330}
-  dialogue:
-  - Luckily we weren't followed. We only need to hold out here for around 5 minutes,
-    the reinforcements will be on their way soon.
-  - "This place used to be a vr arcade.. Before the virus\u2026 it must have backup
-    power somewhere. Find the circuit box, you'll probably be able to turn it on."
-  - ' '
 --- !u!1 &285312571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2522,7 +2516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a1eb1239c205d4682cf92a74db97a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beanCanvas: {fileID: 269347374}
   pickUp: {fileID: 1043390875}
   pickedUp: {fileID: 0}
   p3Full: 0

@@ -28,9 +28,6 @@ public class DoubleDoorsScript : MonoBehaviour
         if (doorsBool.p1Full == true && doorsBool.p2Full == true && p3Full == true && p4Full == true && p5Full == true)
         {
             woodPlaced = true;
-            /*JoshDialogueScript joshDS = beanCanvas.GetComponent<JoshDialogueScript>();
-
-            joshDS.Planks();*/
         }
     }
 
@@ -40,7 +37,7 @@ public class DoubleDoorsScript : MonoBehaviour
         {
             if (collision.gameObject.tag == "Player")
             {
-                if (pickUp.isPickedUp == true && pickUp.pickupTarget.name != "paper")
+                if (pickUp.isPickedUp == false && pickUp.pickupTarget.name != "paper")
                 {
                     pickedUp = pickUp.pickupTarget;
 

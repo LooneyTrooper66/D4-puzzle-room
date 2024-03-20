@@ -38,7 +38,7 @@ public class PickUpScript : MonoBehaviour
                 pickupTarget.transform.localPosition = new Vector3(0, 0, 0);
                 isPickedUp = true;
 
-                if (collision.gameObject.name == "paper")
+                if (pickupTarget.gameObject.name == "paper")
                 {
                     paperUp = true;
                 }

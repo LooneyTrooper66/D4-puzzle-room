@@ -18,35 +18,27 @@ public class JoshDialogueScript : MonoBehaviour
     private bool completeBu;
 
     public Text joshText;
-    private float textTimer = 7;
-    public string[] dialogue;
-    private int i = 0;
-    private bool first;
 
 
-    void Start()
+    private void Start()
     {
-        first = true;
         completeBr = false;
         completeDr = false;
         hintPlayed = false;
         completePa = false;
         completeKc = false;
         completeBu = false;
+
+        StartCoroutine(FirstLine());
     }
 
-    void Update()
+    private void Update()
     {
-        if (first == true)
-        {
-            InitialDialogue();
-        }
-
         if (breakerScr.wiresConnected == true)
         {
             if (completeBr == false)
             {
-                Wires();
+                StartCoroutine(WiresDone());
             }
         }
 
@@ -54,12 +46,11 @@ public class JoshDialogueScript : MonoBehaviour
         {
             if (completeDr == false)
             {
-                Planks();
+                StartCoroutine(PlanksDone());
             }
-
-            if (completeDr == true && hintPlayed == false)
+            else if (completeDr == true && hintPlayed == false)
             {
-                Hint();
+                StartCoroutine(Hint());
             }
         }
 
@@ -67,7 +58,7 @@ public class JoshDialogueScript : MonoBehaviour
         {
             if (completePa == false)
             {
-                Paper();
+                StartCoroutine(PaperUp());
             }
         }
 
@@ -75,7 +66,7 @@ public class JoshDialogueScript : MonoBehaviour
         {
             if (completeKc == false)
             {
-                Code();
+                StartCoroutine(KeycodeDone());
             }
         }
 
@@ -83,131 +74,110 @@ public class JoshDialogueScript : MonoBehaviour
         {
             if (completeBu == false)
             {
-                Button();
+                StartCoroutine(PinballOn());
             }
+        }
+
+    }
+
+    IEnumerator ClearText()
+    {
+        joshText.text = string.Empty;
+        yield return null;
+    }
+
+    IEnumerator FirstLine()
+    {
+        joshText.text = "Thank fuck, we got away.\nAh , shit this hurts. I'm not going to be able to walk for a while, but I'll instruct you on what to do.";
+        yield return new WaitForSeconds(6f);
+        StartCoroutine(SecondLine());
+    }
+
+    IEnumerator SecondLine()
+    {
+        joshText.text = "Luckily we weren't followed. We only need to hold out here for around 5 minutes,\nThe reinforcements will be on their way soon.";
+        yield return new WaitForSeconds(5f);
+        if (breakerScr.wiresConnected == false)
+        {
+            StartCoroutine(ThirdLine());
         }
     }
 
-    void InitialDialogue()
+    IEnumerator ThirdLine()
     {
-        if (textTimer > 0)
-        {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0)
-        {
-            if (i <= 2)
-            {
-                joshText.text = dialogue[i];
-                i++;
-                textTimer = 6;
-            }
-            else if (i >= 3 || completeBr == true)
-            {
-                joshText.text = " ";
-                first = false;
-            }
-        }
+        joshText.text = "This place used to be a vr arcade.. Before the virus… it must have backup\n power somewhere. Find the circuit box, you'll probably be able to turn it on.";
+        yield return new WaitForSeconds(5f);
+        StartCoroutine(ClearText());
     }
 
-    public void Wires()
+    IEnumerator WiresDone()
     {
-        textTimer = 5;
         joshText.text = "Alright nice! \nWait.. I can hear the undead outside, they’re getting close. \nUse those broken bits of wood to block the doors, quick!";
-
-        if (textTimer > 0)
-        {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0)
-        {
-            textTimer = 0;
-            joshText.text = " ";
-        }
+        yield return new WaitForSeconds(5f);
         completeBr = true;
+        StartCoroutine(ClearText());
     }
 
-    public void Planks()
+    IEnumerator PlanksDone()
     {
-        textTimer = 7;
+        completeBr = true;
         joshText.text = "Nice! It'll be difficult for them to get in now, but those noises are still too close for comfort.\nThat door only locks if you put in a combination code. Quick, look around. We need to find that code.";
-
-        if (textTimer >= 0)
-        {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0 || completePa == true)
-        {
-            textTimer = 0;
-            joshText.text = " ";
-        }
+        yield return new WaitForSeconds(6f);
+        completeDr = true;
     }
 
-    public void Hint()
+    IEnumerator Hint()
     {
-        textTimer = 5;
-        joshText.text = " ";
-
-        if (textTimer > 0)
+        completeDr = true;
+        joshText.text = string.Empty;
+        yield return new WaitForSeconds(5f);
+        if (hintPlayed == false)
         {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0 /*&& completePa == false*/)
-        {
-            textTimer = 0;
             joshText.text = "Maybe check behind the counter, i bet the owner would keep it there.";
+            yield return new WaitForSeconds(3f);
+            hintPlayed = true;
+            StartCoroutine(ClearText());
         }
+    }
+
+    IEnumerator PaperUp()
+    {
         hintPlayed = true;
-    }
-
-    public void Paper()
-    {
-        textTimer = 6;
         joshText.text = "Wow, so secure. Just go key it in, the numpad is next to the door. \nI've heard those keys can be a bit sticky, so just keep trying.";
-
-        if (textTimer > 0)
-        {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0 || completeKc == true)
-        {
-            textTimer = 0;
-            joshText.text = " ";
-        }
+        yield return new WaitForSeconds(5f);
         completePa = true;
+        StartCoroutine(ClearText());
     }
 
-    public void Code()
+    IEnumerator KeycodeDone()
     {
-        textTimer = 10;
-        joshText.text = "Jesus, that felt close.\nOk, when the virus first came about, the military converted anything they could into civilian controlled defence systems. There was a pinball machine in this bar, I'm sure they made that into one too. Look around, there should be a switch to activate it somewhere.";
+        completePa = true;
+        joshText.text = "Jesus, that felt close.\nOk, when the virus first came about, the military converted anything they could into civilian controlled defence systems.";
+        yield return new WaitForSeconds(4f);
+        StartCoroutine(KeyDone2());
+    }
 
-        if (textTimer > 0)
-        {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0 || completeBu == true)
-        {
-            textTimer = 0;
-            joshText.text = "  ";
-        }
+    IEnumerator KeyDone2()
+    {
+        joshText.text = "There was a pinball machine in this bar, I'm sure they made that into one too. Look around, there should be a switch to activate it somewhere.";
+        yield return new WaitForSeconds(4f);
         completeKc = true;
+        StartCoroutine(ClearText());
     }
 
-    public void Button()
+    IEnumerator PinballOn()
     {
-        textTimer = 10;
-        joshText.text = "There it is! Now quick, play it and beat it, it’ll launch weapons to kill the undead within guildford. With this, we may be able to protect everyone else until reinforcements arrive! Just keep an eye on the time, coz we’re running out of it.";
+        completeKc = true;
+        joshText.text = "There it is! Now quick, play it and beat it, it’ll launch weapons to kill the undead within guildford.";
+        yield return new WaitForSeconds(3f);
+        StartCoroutine(PinballOn2());
+    }
 
-        if (textTimer > 0)
-        {
-            textTimer -= Time.deltaTime;
-        }
-        else if (textTimer <= 0)
-        {
-            textTimer = 0;
-            joshText.text = " ";
-        } 
+    IEnumerator PinballOn2()
+    {
+        joshText.text = "With this, we may be able to protect everyone else until reinforcements arrive! Just keep an eye on the time, coz we’re running out of it.";
+        yield return new WaitForSeconds(4f);
         completeBu = true;
+        StartCoroutine(ClearText());
     }
 }
