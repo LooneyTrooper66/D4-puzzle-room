@@ -6,7 +6,7 @@ public class KeycodePuzzleRaycastScript : MonoBehaviour
     public KeyCodeScript keyCodeScr;
     public string currentKey;
 
-    public DoubleDoorsScript doubleDoors;
+    public PickUpScript doubleDoors;
     public KeyCodeScript keycode;
     public bool buttonOn;
 
@@ -38,12 +38,12 @@ public class KeycodePuzzleRaycastScript : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            if (keyCodeScr.codeCorrect == false && doubleDoors.woodPlaced == true)
+            if (keyCodeScr.codeCorrect == false && doubleDoors.paperUp == true)
             {
                 Key();
                 keyCodeScr.Passcode(currentKey);
             }
-            else if (keyCodeScr.codeCorrect == true && doubleDoors.woodPlaced == true)
+            else if (keyCodeScr.codeCorrect == true && doubleDoors.paperUp == true)
             {
                 Button();
             }
