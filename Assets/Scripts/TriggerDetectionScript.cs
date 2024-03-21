@@ -14,19 +14,7 @@ public class TriggerDetectionScript : MonoBehaviour
 
     private void Start()
     {
-        PlayerCamera.SetActive(true);
-        PinballCamera.SetActive(false);
         playingPinball = false;
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            PlayerCamera.SetActive(true);
-            PinballCamera.SetActive(false);
-            playingPinball = false;
-        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -36,7 +24,6 @@ public class TriggerDetectionScript : MonoBehaviour
             if (other.gameObject.tag == "Player" && Input.GetKey(KeyCode.F))
             {
                 PlayerCamera.SetActive(false);
-                PinballCamera.SetActive(true);
                 playingPinball = true;
             }
         }

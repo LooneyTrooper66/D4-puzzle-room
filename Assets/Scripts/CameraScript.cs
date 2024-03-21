@@ -7,7 +7,6 @@ public class CameraScript : MonoBehaviour
 {
     public GameObject playerObject;
     private Camera playerCamera;
-    public Camera pinballCamera;
 
 
     private void Start()

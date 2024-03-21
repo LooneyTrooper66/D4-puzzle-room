@@ -600,9 +600,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Oh thank god, we\u2019re saved! Now the military can save the people hiding
-    at the Tunsgate Arch and make their way to us too.\r\nI need to get medical attention
-    for my leg, but thank you. Without you we would've been gonners.\r\n"
+  m_Text: "Oh thank god, we\u2019re saved! Now the military can save the others at
+    Tunsgate Arch and make their way to us too.\r\nWe can see our friends again!.
+    Thank you, with my leg, without you we all would've been gonners.\r"
 --- !u!222 &1105719850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -681,9 +681,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Oh thank god, we\u2019re saved! Now the military can save the people hiding
-    at the Tunsgate Arch and make their way to us too.\r\nI need to get medical attention
-    for my leg, but thank you. Without you we would've been gonners.\r\n"
+  m_Text: "Oh thank god, we\u2019re saved! Now the military can save the others at
+    Tunsgate Arch and make their way to us too.\r\nWe can see our friends again!.
+    Thank you, with my leg, without you we all would've been gonners.\r"
 --- !u!222 &1160405928
 CanvasRenderer:
   m_ObjectHideFlags: 0

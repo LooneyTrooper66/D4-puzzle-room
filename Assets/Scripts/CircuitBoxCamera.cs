@@ -6,6 +6,7 @@ public class CircuitBoxCamera : MonoBehaviour
 {
     public GameObject PlayerCamera;
     public Canvas PlayerCanvas;
+    public Canvas pinballCanvas;
     public GameObject BreakerCamera;
     public Canvas BreakerCanvas;
 
@@ -53,6 +54,7 @@ public class CircuitBoxCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             PlayerCamera.SetActive(true);
             PlayerCanvas.enabled = true;
+            pinballCanvas.enabled = true;
 
             BreakerCamera.SetActive(false);
             BreakerCanvas.enabled = false;
@@ -76,6 +78,7 @@ public class CircuitBoxCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             PlayerCamera.SetActive(false);
             PlayerCanvas.enabled = false;
+            pinballCanvas.enabled = false;
 
             BreakerCamera.SetActive(true);
             BreakerCanvas.enabled = true;
