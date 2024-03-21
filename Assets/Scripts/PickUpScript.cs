@@ -9,9 +9,12 @@ public class PickUpScript : MonoBehaviour
     public bool isPickedUp;
     public bool paperUp;
 
+    public DoubleDoorsScript doors;
+
 
     private void Start()
     {
+        doors.GetComponent<DoubleDoorsScript>();
         isPickedUp = false;
     }
 
@@ -29,7 +32,7 @@ public class PickUpScript : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.tag == "pickUp" && Input.GetKey(KeyCode.F))
+        if (collision.gameObject.tag == "pickUp" && Input.GetKey(KeyCode.F) && collision.gameObject.name != "paper")
         {
             if (isPickedUp == false)
             {
@@ -37,11 +40,18 @@ public class PickUpScript : MonoBehaviour
                 pickupTarget.transform.parent = pickupPoint.transform;
                 pickupTarget.transform.localPosition = new Vector3(0, 0, 0);
                 isPickedUp = true;
+            }
+        }
+        else if (collision.gameObject.name == "paper" && Input.GetKey(KeyCode.F) && doors.woodPlaced == true)
+        {
+            if (isPickedUp == false)
+            {
+                paperUp = true;
 
-                if (pickupTarget.gameObject.name == "paper")
-                {
-                    paperUp = true;
-                }
+                pickupTarget = collision.gameObject;
+                pickupTarget.transform.parent = pickupPoint.transform;
+                pickupTarget.transform.localPosition = new Vector3(0, 0, 0);
+                isPickedUp = true;
             }
         }
     }
