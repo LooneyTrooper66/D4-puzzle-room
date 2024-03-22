@@ -9,6 +9,10 @@ public class PauseMenu : MonoBehaviour
     public Button exitButton;
     public Image buttonImage;
 
+    public PlayerMovement movementScr;
+    public MouseMovement mouseScr;
+    public BreakerBoxPuzzle breakerScr;
+
 
     private void Start()
     {
@@ -24,6 +28,11 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             exitButton.enabled = true;
             buttonImage.enabled = true;
+
+            movementScr.enabled = false;
+            mouseScr.enabled = false;
+            breakerScr.enabled = false;
+
             isPaused = true;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
@@ -31,6 +40,11 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             exitButton.enabled = false;
             buttonImage.enabled = false;
+
+            movementScr.enabled = true;
+            mouseScr.enabled = true;
+            breakerScr.enabled = true;
+
             isPaused = false;
         }
     }

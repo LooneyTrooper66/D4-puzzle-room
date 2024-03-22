@@ -23,6 +23,8 @@ public class JoshDialogueScript : MonoBehaviour
 
     public Text joshText;
 
+    public PauseMenu paused;
+
 
     private void Start()
     {

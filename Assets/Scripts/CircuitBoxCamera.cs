@@ -6,7 +6,6 @@ public class CircuitBoxCamera : MonoBehaviour
 {
     public GameObject PlayerCamera;
     public Canvas PlayerCanvas;
-    public Canvas pinballCanvas;
     public GameObject BreakerCamera;
     public Canvas BreakerCanvas;
 
@@ -27,11 +26,15 @@ public class CircuitBoxCamera : MonoBehaviour
     public Material mat2;
 
     public BreakerBoxPuzzle boxPuzzle;
+    public bool inCamera;
+    private bool locked;
 
 
     private void Start()
     {
         boxOn = false;
+        inCamera = false;
+        locked = false;
 
         BreakerCamera.SetActive(false);
         BreakerCanvas.enabled = false;
@@ -49,12 +52,20 @@ public class CircuitBoxCamera : MonoBehaviour
 
     private void Update()
     {
+        if (inCamera == true)
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+
         if (boxPuzzle.wiresConnected == true)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            if (locked == false)
+            {
+                LockMouse();
+            }
+            inCamera = false;
             PlayerCamera.SetActive(true);
             PlayerCanvas.enabled = true;
-            pinballCanvas.enabled = true;
 
             BreakerCamera.SetActive(false);
             BreakerCanvas.enabled = false;
@@ -78,12 +89,18 @@ public class CircuitBoxCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             PlayerCamera.SetActive(false);
             PlayerCanvas.enabled = false;
-            pinballCanvas.enabled = false;
 
             BreakerCamera.SetActive(true);
             BreakerCanvas.enabled = true;
+            inCamera = true;
 
             lightColour.material.SetColor("_EmissionColor", Color.green);
         }
+    }
+
+    void LockMouse()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        locked = true;
     }
 }
