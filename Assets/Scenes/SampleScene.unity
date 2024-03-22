@@ -11536,7 +11536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8e3e79e90b4d3499c570aa71d98736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensitivity: 100
+  MouseSensitivity: 50
   playerBody: {fileID: 1043390871}
 --- !u!114 &330585549
 MonoBehaviour:
@@ -30810,7 +30810,7 @@ MonoBehaviour:
   restPosition: 0
   pressedPosition: 45
   hitstrength: 250000
-  flipperDamper: 50
+  flipperDamper: 20
   inputName: RFlipper
   buttonCheck: {fileID: 330585551}
 --- !u!59 &1855431205
@@ -30916,7 +30916,7 @@ MonoBehaviour:
   restPosition: 0
   pressedPosition: -45
   hitstrength: 250000
-  flipperDamper: 50
+  flipperDamper: 20
   inputName: LFlipper
   buttonCheck: {fileID: 330585551}
 --- !u!59 &1855431209
