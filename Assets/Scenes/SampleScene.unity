@@ -11360,6 +11360,7 @@ MonoBehaviour:
   keycodeScr: {fileID: 757807205}
   buttonScr: {fileID: 330585551}
   joshText: {fileID: 8407330}
+  paused: {fileID: 457960628}
 --- !u!1 &285312571
 GameObject:
   m_ObjectHideFlags: 0
@@ -11681,7 +11682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8e3e79e90b4d3499c570aa71d98736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MouseSensitivity: 50
+  MouseSensitivity: 25
   playerBody: {fileID: 1043390871}
 --- !u!114 &330585549
 MonoBehaviour:
@@ -17068,6 +17069,7 @@ MonoBehaviour:
   movementScr: {fileID: 1043390874}
   mouseScr: {fileID: 330585548}
   breakerScr: {fileID: 64796819}
+  keyScr: {fileID: 330585551}
 --- !u!1 &512486880 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3460739868959290001, guid: 65745ae9d94a0034189adc8749179b08,

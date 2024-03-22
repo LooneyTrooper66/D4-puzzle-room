@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour
     public PlayerMovement movementScr;
     public MouseMovement mouseScr;
     public BreakerBoxPuzzle breakerScr;
+    public KeycodePuzzleRaycastScript keyScr;
 
 
     private void Start()
@@ -32,6 +33,7 @@ public class PauseMenu : MonoBehaviour
             movementScr.enabled = false;
             mouseScr.enabled = false;
             breakerScr.enabled = false;
+            keyScr.enabled = false;
 
             isPaused = true;
         }
@@ -44,6 +46,7 @@ public class PauseMenu : MonoBehaviour
             movementScr.enabled = true;
             mouseScr.enabled = true;
             breakerScr.enabled = true;
+            keyScr.enabled = true;
 
             isPaused = false;
         }

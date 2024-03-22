@@ -34,7 +34,7 @@ public class KeycodePuzzleRaycastScript : MonoBehaviour
 
     void Update()
     {
-        //Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward, Color.blue);
+        Debug.DrawRay(playerCam.transform.position, playerCam.transform.forward, Color.blue);
 
         if (Input.GetButtonDown("Fire1"))
         {
