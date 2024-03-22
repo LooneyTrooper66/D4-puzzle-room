@@ -9,18 +9,23 @@ public class PinballTimerUpdate : MonoBehaviour
     public Text controls;
 
     public TriggerDetectionScript pinball;
+    public PauseMenu paused;
 
-
-    private void Start()
-    {
-        controls.text = "Left Click - Select \nF - Pick Up / Interact \nE - Drop";
-    }
 
     private void Update()
     {
-        if (pinball.playingPinball == true)
+        if (paused.isPaused == true)
         {
-            controls.text = "A - Left Flipper \nL - Right Flipper \nLCtrl - Spawn Ball \nX - Destroy Ball";
+            controls.text = "Esc - Unpause";
+        }
+
+        if (pinball.playingPinball == true && paused.isPaused == false)
+        {
+            controls.text = "Esc - Pause \nA - Left Flipper \nL - Right Flipper \nLCtrl - Spawn Ball \nX - Destroy Ball";
+        }
+        else if (pinball.playingPinball == true && paused.isPaused == true)
+        {
+            controls.text = "Esc - Unpause";
         }
     }
 }

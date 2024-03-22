@@ -80,6 +80,7 @@ public class JoshDialogueScript : MonoBehaviour
         // plays text after keycode inputted correctly \\
         if (keycodeScr.codeCorrect == true)
         {
+            hintPlayed = true;
             completePa = true;
             if (completeKc == false)
             {
@@ -157,7 +158,7 @@ public class JoshDialogueScript : MonoBehaviour
 
     IEnumerator WiresDone()
     {
-        joshText.text = "Alright nice! \nWait.. I can hear the undead outside, they’re getting close. \nUse those broken bits of wood to block the doors, quick!";
+        joshText.text = "Alright nice! \nWait.. I can hear the undead outside, they’re getting close. \nUse those broken bits of wood to board up both doors, quick!";
         yield return new WaitForSeconds(5f);
         completeBr = true;
         joshText.text = string.Empty;

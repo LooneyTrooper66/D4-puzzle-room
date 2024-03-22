@@ -10,6 +10,7 @@ public class PlaytimeTimer : MonoBehaviour
 
     public float timeLeft;
     public string newTime;
+    public PauseMenu paused;
 
 
     private void Start()
@@ -19,7 +20,7 @@ public class PlaytimeTimer : MonoBehaviour
 
     public void Update()
     {
-        if (timeLeft > 0)
+        if (timeLeft > 0 && paused.isPaused == false)
         {
             timeLeft -= Time.deltaTime;
             updateTimer(timeLeft);

@@ -9,6 +9,8 @@ public class WinColliderScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "ball")
         {
+            Destroy(collision.gameObject);
+            BallSpawnScript.loadIndex = BallSpawnScript.loadIndex - 1;
             SceneManager.LoadScene("GameWon");
         }
     }
