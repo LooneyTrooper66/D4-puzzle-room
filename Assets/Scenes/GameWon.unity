@@ -600,15 +600,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-<<<<<<< Updated upstream
   m_Text: "Oh thank god, we\u2019re saved! Now the military can save the others at
     Tunsgate Arch and make their way to us too.\r\nWe can see our friends again!.
     Thank you, with my leg, without you we all would've been gonners.\r"
-=======
-  m_Text: "Oh thank god, we\u2019re saved! Now the military can save the people hiding
-    at the Tunsgate Arch and make their way to us too.\r\nI need to get medical attention
-    for my leg, but thank you. Without you we would've been gonners.\r\n"
->>>>>>> Stashed changes
 --- !u!222 &1105719850
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -687,15 +681,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-<<<<<<< Updated upstream
   m_Text: "Oh thank god, we\u2019re saved! Now the military can save the others at
     Tunsgate Arch and make their way to us too.\r\nWe can see our friends again!.
     Thank you, with my leg, without you we all would've been gonners.\r"
-=======
-  m_Text: "Oh thank god, we\u2019re saved! Now the military can save the people hiding
-    at the Tunsgate Arch and make their way to us too.\r\nI need to get medical attention
-    for my leg, but thank you. Without you we would've been gonners.\r\n"
->>>>>>> Stashed changes
 --- !u!222 &1160405928
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -865,11 +853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< Updated upstream
   m_text: 
-=======
-  m_text: Button
->>>>>>> Stashed changes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1149,11 +1133,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-<<<<<<< Updated upstream
   m_text: 
-=======
-  m_text: Button
->>>>>>> Stashed changes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1483,11 +1463,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1835551256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 2139d566617205342b74060b4c152f35, type: 3}
-=======
-  m_Script: {fileID: 11500000, guid: b2af0594ea249744594e4dba3af7d36c, type: 3}
->>>>>>> Stashed changes
   m_Name: 
   m_EditorClassIdentifier: 
   gameOver: {fileID: 1213648694}
