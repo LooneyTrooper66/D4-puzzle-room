@@ -27,6 +27,8 @@ public class CircuitBoxCamera : MonoBehaviour
 
     public BreakerBoxPuzzle boxPuzzle;
 
+    public bool TVON = false;
+
 
     private void Start()
     {
@@ -44,6 +46,8 @@ public class CircuitBoxCamera : MonoBehaviour
         spotlight3.enabled = false;
 
         tvScreens.GetComponent<MeshRenderer>().material = mat1;
+
+     
     }
 
     private void Update()
@@ -66,6 +70,7 @@ public class CircuitBoxCamera : MonoBehaviour
             lightCol.material.SetColor("_EmissionColor", Color.green);
             boxSpot.color = Color.green;
             tvScreens.GetComponent<MeshRenderer>().material = mat2;
+            
         }
     }
 
@@ -81,6 +86,16 @@ public class CircuitBoxCamera : MonoBehaviour
             BreakerCanvas.enabled = true;
 
             lightColour.material.SetColor("_EmissionColor", Color.green);
+            
+            
         }
+    }
+
+    public bool TVisON (TVON == false)
+    {
+       if (BreakerCanvas.enabled == true)
+        {
+            TVON = true;
+        }  
     }
 }
