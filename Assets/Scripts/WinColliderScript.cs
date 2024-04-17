@@ -9,8 +9,11 @@ public class WinColliderScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "ball")
         {
+<<<<<<< Updated upstream
             Destroy(collision.gameObject);
             BallSpawnScript.loadIndex = BallSpawnScript.loadIndex - 1;
+=======
+>>>>>>> Stashed changes
             SceneManager.LoadScene("GameWon");
         }
     }

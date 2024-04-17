@@ -193,10 +193,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
+<<<<<<< Updated upstream
   m_Text: 'Thank god, we got away.
 
     Ah , shit this hurts. I''m not going to be
     able to walk for a while, but I''ll instruct you on what to do.'
+=======
+  m_Text: 'Thank fuck, we got away.
+
+    Ah , shit this hurts. I''m not going to
+    be able to walk for a while, but I''ll instruct you on what to do.'
+>>>>>>> Stashed changes
 --- !u!222 &8407331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -205,6 +212,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8407328}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1 &42211717
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +358,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42211717}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> Stashed changes
 --- !u!1 &64796814
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,6 +982,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 436772844}
   m_SourcePrefab: {fileID: 100100000, guid: fe17bfb1b2fb4734d87196d6cbb84457, type: 3}
+<<<<<<< Updated upstream
 --- !u!1 &91859325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1079,8 @@ MonoBehaviour:
   timeLeft: 300
   newTime: 
   paused: {fileID: 457960628}
+=======
+>>>>>>> Stashed changes
 --- !u!1001 &109467840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1126,6 +1139,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: -3347090507751969436, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1141,11 +1155,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e0f62c0ed4b1d6345ba8e246ab4cb0c0, type: 2}
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 919132149155446097, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Name
       value: josh animations
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 2236237030686087061, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1161,6 +1178,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5858e8bcc78244042b01800201f051a2, type: 2}
+=======
+>>>>>>> Stashed changes
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1169,10 +1188,13 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 109467842}
+<<<<<<< Updated upstream
     - targetCorrespondingSourceObject: {fileID: -6411429427084509237, guid: f7c96793a07e10f43984a70f506c7a42,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 190014164}
+=======
+>>>>>>> Stashed changes
   m_SourcePrefab: {fileID: 100100000, guid: f7c96793a07e10f43984a70f506c7a42, type: 3}
 --- !u!1 &109467841 stripped
 GameObject:
@@ -11358,9 +11380,20 @@ MonoBehaviour:
   doorsScr: {fileID: 695162068}
   paperScr: {fileID: 1043390875}
   keycodeScr: {fileID: 757807205}
+<<<<<<< Updated upstream
   buttonScr: {fileID: 330585551}
   joshText: {fileID: 8407330}
   paused: {fileID: 457960628}
+=======
+  buttonScr: {fileID: 0}
+  joshText: {fileID: 8407330}
+  dialogue:
+  - Luckily we weren't followed. We only need to hold out here for around 5 minutes,
+    the reinforcements will be on their way soon.
+  - "This place used to be a vr arcade.. Before the virus\u2026 it must have backup
+    power somewhere. Find the circuit box, you'll probably be able to turn it on."
+  - ' '
+>>>>>>> Stashed changes
 --- !u!1 &285312571
 GameObject:
   m_ObjectHideFlags: 0
@@ -11720,7 +11753,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca778efefd2f9d408a50823bf53f2a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 42d54db8e8b93c84c8ce610442c76b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 330585545}
@@ -11729,8 +11762,8 @@ MonoBehaviour:
   doubleDoors: {fileID: 695162068}
   keycode: {fileID: 757807205}
   buttonOn: 0
-  smallColour: {fileID: 1481429324}
-  lightColour: {fileID: 1481429326}
+  smallColour: {fileID: 0}
+  lightColour: {fileID: 0}
   spotlight: {fileID: 1816320597}
   neon1: {fileID: 896866694}
   neon2: {fileID: 1242165128}
@@ -17123,7 +17156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballPrefab: {fileID: 6862218617270883261, guid: f326fa22851ac794490056de7ae19c35,
     type: 3}
-  buttonCheck: {fileID: 330585551}
+  buttonCheck: {fileID: 0}
 --- !u!114 &516851368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17268,6 +17301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551091740}
   serializedVersion: 2
+<<<<<<< Updated upstream
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -14.678, y: 4.286, z: -8.987}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
@@ -17275,6 +17309,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+=======
+  m_UseSpring: 1
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_ExtendedLimits: 0
+  m_UseAcceleration: 0
+  m_Limits:
+    min: 0
+    max: 45
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &554551819
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554551814}
+  serializedVersion: 4
+  m_Mass: 20
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!64 &554551820
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554551814}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5852728457991693543, guid: fe17bfb1b2fb4734d87196d6cbb84457, type: 3}
+--- !u!114 &554551821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554551814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4392db006600ce4396129f90b5f18b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPosition: 0
+  pressedPosition: 45
+  hitstrength: 150000
+  flipperDamper: 150
+  inputName: RFlipper
+  buttonCheck: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &587402935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2923537405145084153, guid: 65745ae9d94a0034189adc8749179b08,
@@ -23826,7 +23954,10 @@ MonoBehaviour:
   pickupTarget: {fileID: 0}
   isPickedUp: 0
   paperUp: 0
+<<<<<<< Updated upstream
   doors: {fileID: 695162068}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1078957426
 GameObject:
   m_ObjectHideFlags: 0
@@ -25191,6 +25322,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1442942714}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1 &1481429324 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2396075469188313724, guid: 65745ae9d94a0034189adc8749179b08,
@@ -25234,6 +25366,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!65 &1523431180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30459,7 +30593,123 @@ MonoBehaviour:
   Player: {fileID: 1043390867}
   PinballCamera: {fileID: 2101661923}
   playingPinball: 0
+<<<<<<< Updated upstream
   buttonCheck: {fileID: 330585551}
+=======
+  buttonCheck: {fileID: 0}
+--- !u!1 &1684837319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 66874652499805015, guid: fe17bfb1b2fb4734d87196d6cbb84457,
+    type: 3}
+  m_PrefabInstance: {fileID: 85196329}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1684837323
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684837319}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2416666763342701705, guid: fe17bfb1b2fb4734d87196d6cbb84457, type: 3}
+--- !u!59 &1684837324
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684837319}
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0, z: 0.01}
+  m_Axis: {x: 0, y: 0, z: 1}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -10.995, y: 2.134499, z: -6.6610484}
+  serializedVersion: 2
+  m_UseSpring: 1
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 0
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 1
+  m_ExtendedLimits: 0
+  m_UseAcceleration: 0
+  m_Limits:
+    min: -45
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &1684837325
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684837319}
+  serializedVersion: 4
+  m_Mass: 20
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &1684837326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684837319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4392db006600ce4396129f90b5f18b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restPosition: 0
+  pressedPosition: -45
+  hitstrength: 150000
+  flipperDamper: 150
+  inputName: LFlipper
+  buttonCheck: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &1788535673
 GameObject:
   m_ObjectHideFlags: 0
@@ -37556,7 +37806,10 @@ SceneRoots:
   - {fileID: 64796818}
   - {fileID: 986556479}
   - {fileID: 109467840}
+<<<<<<< Updated upstream
   - {fileID: 1173283289}
   - {fileID: 1221559188}
   - {fileID: 1488985159}
   - {fileID: 551091742}
+=======
+>>>>>>> Stashed changes
